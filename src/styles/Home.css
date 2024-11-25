@@ -1,0 +1,271 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+main {
+    position: relative;
+    padding-top: 70px;
+    /* Avoid overlap with header */
+    height: 90vh;
+    width: 100vw;
+    overflow: auto;
+}
+.MoneyEarningSect {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 400px; /* Default width */
+    background: #0ba17e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 16px; /* Default font size */
+    line-height: 1.5;
+}
+
+
+/* Overlay Styles */
+.overlay {
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    background: #00000060;
+    z-index: 1000;
+    position: fixed; /* Fixed position to cover the whole screen */
+    top: 0;
+    left: 0;
+    display: none; /* Hidden by default */
+    overflow: auto; /* Hide scrollbars */
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    height: fit-content;
+    max-height: 86%;
+    width: 90%;
+    max-width: 900px;
+    z-index: 1001; /* Ensure popup is above overlay */
+    animation: fadeIn 0.3s ease-in-out;
+
+    overflow: auto;
+}
+
+.popup-content {
+    position: relative;
+    overflow: auto;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+
+/* Existing Styles */
+#searchbox {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#searchbox input {
+    width: 80%;
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.scholarship_cont {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 50px;
+}
+
+.scholarship-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 48%;
+    margin: 10px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.scholarship-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.OngoingScholarships{
+
+    color: rgb(60, 60, 197);
+     text-align: center; 
+}
+
+
+.scholarship-card .name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+.scholarship-card .country,
+.scholarship-card .class {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Responsive Design */
+
+/* For tablets (768px and up) */
+@media (max-width: 1024px) {
+    .scholarship-card {
+        width: 100%;
+    }
+
+    .popup {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .scholarship-card .name {
+        font-size: 20px;
+    }
+
+    .scholarship-card .country,
+    .scholarship-card .class {
+        font-size: 15px;
+    }
+}
+
+/* For mobile phones (up to 767px) */
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    .scholarship_cont{
+        flex-direction: column;
+    }
+
+    .scholarship-card {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .scholarship-card .name {
+        font-size: 18px;
+    }
+
+    .scholarship-card .country,
+    .scholarship-card .class {
+        font-size: 14px;
+    }
+
+    .popup {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .popup-content h2 {
+        font-size: 18px;
+    }
+
+    .popup-content p {
+        font-size: 14px;
+    }
+
+    .close-popup {
+        font-size: 18px;
+    }  .MoneyEarningSect {
+        width: 250px; /* Reduce width */
+        right: 10px; /* Adjust position */
+        bottom: 10px; /* Adjust position */
+        padding: 15px; /* Reduce padding */
+        font-size: 14px; /* Slightly smaller font */
+        background: #29caa5;
+    }
+
+}
+
+/* For small phones (up to 480px) */
+@media (max-width: 480px) {
+    .scholarship-card {
+        padding: 10px;
+    }
+
+    .scholarship-card .name {
+        font-size: 16px;
+    }
+
+    .scholarship-card .country,
+    .scholarship-card .class {
+        font-size: 13px;
+    }
+
+    .popup-content p {
+        font-size: 12px;
+    }
+
+    .close-popup {
+        font-size: 16px;
+    }
+    .MoneyEarningSect {
+        width: 90%; /* Use most of the screen width */
+        left: 5%; /* Center horizontally */
+        right: 5%; /* Center horizontally */
+        bottom: 10px; /* Adjust position */
+        padding: 10px; /* Reduce padding */
+        font-size: 12px; /* Smaller font size */
+        background: #29caa5;
+    }
+}

@@ -1,0 +1,99 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    /* Prevent horizontal scroll */
+}
+
+main {
+    padding-top: 70px;
+    /* Avoid overlap with header */
+    height: 100vh;
+    width: 100vw;
+}
+.MoneyEarningSect {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 400px; /* Default width */
+    background: #0ba17e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 16px; /* Default font size */
+    line-height: 1.5;
+}
+
+.contact-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.contact-container h2 {
+    color: #004d40;
+}
+
+.contact-container a {
+    color: #00796b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-container a:hover {
+    color: #004d40;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #004d40;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* For tablets and smaller screens (width <= 768px) */
+@media screen and (max-width: 768px) {
+    .MoneyEarningSect {
+        width: 250px; /* Reduce width */
+        right: 10px; /* Adjust position */
+        bottom: 10px; /* Adjust position */
+        padding: 15px; /* Reduce padding */
+        font-size: 14px; /* Slightly smaller font */
+        background: #29caa5;
+    }
+}
+
+/* For small phones (width <= 480px) */
+@media screen and (max-width: 480px) {
+    .MoneyEarningSect {
+        width: 90%; /* Use most of the screen width */
+        left: 5%; /* Center horizontally */
+        right: 5%; /* Center horizontally */
+        bottom: 10px; /* Adjust position */
+        padding: 10px; /* Reduce padding */
+        font-size: 12px; /* Smaller font size */
+        background: #29caa5;
+    }
+}
